@@ -1,7 +1,9 @@
-EvilScheme
-
 Dedicated to the memory of Lorenzo Pane
 ===
+
+EvilScheme
+===
+
 Extensible iOS tweak for modifying URL actions.
 
 Manual
