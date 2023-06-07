@@ -6,12 +6,12 @@
 #pragma GCC diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-NSString *const dir              = @"/var/mobile/Library/Preferences/EvilScheme/";
-NSString *const logPath          = @"file:/var/mobile/Library/Preferences/EvilScheme/log_v0.plist";
-NSString *const prefsPath        = @"file:/var/mobile/Library/Preferences/EvilScheme/prefs_v0.plist";
-NSString *const blacklistPath    = @"file:/var/mobile/Library/Preferences/EvilScheme/blacklist_v0.plist";
-NSString *const searchEnginePath = @"file:/var/mobile/Library/Preferences/EvilScheme/search_v0.txt";
-NSString *const alternativesPath = @"file:/var/mobile/Library/Preferences/EvilScheme/alternatives_v0.plist";
+NSString *const dir              = @"/var/jb/User/Library/Preferences/EvilScheme/";
+NSString *const logPath          = @"file:/var/jb/User/Library/Preferences/EvilScheme/log_v0.plist";
+NSString *const prefsPath        = @"file:/var/jb/User/Library/Preferences/EvilScheme/prefs_v0.plist";
+NSString *const blacklistPath    = @"file:/var/jb/User/Library/Preferences/EvilScheme/blacklist_v0.plist";
+NSString *const searchEnginePath = @"file:/var/jb/User/Library/Preferences/EvilScheme/search_v0.txt";
+NSString *const alternativesPath = @"file:/var/jb/User/Library/Preferences/EvilScheme/alternatives_v0.plist";
 
 @implementation EVSPreferenceManager
 

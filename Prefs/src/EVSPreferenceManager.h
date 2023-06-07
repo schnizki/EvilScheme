@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <EvilKit/EvilKit.h>
+#import <rootless.h>
 #import "EVSAppAlternativeWrapper.h"
 
 @interface EVSPreferenceManager : NSObject

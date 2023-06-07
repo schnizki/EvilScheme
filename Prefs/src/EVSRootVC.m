@@ -27,16 +27,20 @@
         @"Manual",
         @"Source code / Bug tracker",
         @"License: BSD 3-Clause",
-        @"Follow me on twitter :)",
-        @"Tip jar <3",
+        @"Follow Lorenzo on Twitter",
+        @"Maintainer - 0xkuj",
+        @"Plant a tree for his memory",
+        @"Read Lorenzo's story",
     ];
 
     linkURLs = @[
         @"https://l.pane.net/evil.html",
-        @"https://github.com/lorenzopane/evilscheme",
+        @"https://github.com/0xkuj/EvilScheme",
         @"https://opensource.org/licenses/BSD-3-Clause",
         @"https://twitter.com/mushyware",
-        @"https://l.pane.net/causes.html",
+        @"https://twitter.com/omrkujman",
+        @"https://tree.tributestore.com/memorial-tree?oId=20482611&source=TRR&cn=Obituaries&bn=AdPerfect%20-%20Block%20Communications&md=Pittsburgh%20Post%20Gazette",
+        @"https://obituaries.post-gazette.com/obituary/lorenzo-yovetich-pane-1081878757",
     ];
 
     appAlternatives = [[EVSPreferenceManager activeAlternatives] mutableCopy];
@@ -51,11 +55,15 @@
 }
 
 - (void)setupHeader {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 70)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 130)];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 300, 70)];
+    UILabel *memoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 60, [[UIScreen mainScreen] bounds].size.width, 70)];
+    [memoryLabel setText:@"Dedicated to the memory of Lorenzo Pane"];
+    [memoryLabel setFont:[UIFont monospacedSystemFontOfSize:14 weight:UIFontWeightThin]];
     [titleLabel setText:@"EvilScheme://"];
     [titleLabel setFont:[UIFont monospacedSystemFontOfSize:28 weight:UIFontWeightThin]];
     [headerView addSubview:titleLabel];
+    [headerView addSubview:memoryLabel];
     [[self tableView] setTableHeaderView:headerView];
 }
 

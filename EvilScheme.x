@@ -1,13 +1,13 @@
 #import <EvilKit/EvilKit.h>
 #import "PrivateFrameworks.h"
-
+#import <rootless.h>
 #define appInstalled(app)  [[LSApplicationWorkspace defaultWorkspace] applicationIsInstalled:app]
 
 // Preference retrieval {{{
 static NSDictionary<NSString *, EVKAppAlternative *> *prefs() {
     NSError *err;
 
-    NSString *path = @"/var/mobile/Library/Preferences/EvilScheme/alternatives_v0.plist";
+    NSString *path = ROOT_PATH_NS(@"/var/mobile/Library/Preferences/EvilScheme/alternatives_v0.plist");
     NSData *data = [NSData dataWithContentsOfFile:path];
 
     NSKeyedUnarchiver *u = [[NSKeyedUnarchiver alloc] initForReadingFromData:data error:&err];
@@ -22,7 +22,7 @@ static NSDictionary<NSString *, EVKAppAlternative *> *prefs() {
 static NSSet *blacklist() {
     NSError *err;
 
-    NSString *path = @"/var/mobile/Library/Preferences/EvilScheme/blacklist_v0.plist";
+    NSString *path = ROOT_PATH_NS(@"/var/mobile/Library/Preferences/EvilScheme/blacklist_v0.plist");
     NSData *data = [NSData dataWithContentsOfFile:path];
 
     NSSet *types = [NSSet setWithObjects:[NSOrderedSet class], [NSString class], nil];
@@ -37,7 +37,7 @@ static NSSet *blacklist() {
 // Logging {{{
 static NSDictionary *logDict() {
     NSError *err;
-    NSString *path = @"file:/var/mobile/Library/Preferences/EvilScheme/log_v0.plist";
+    NSString *path = ROOT_PATH_NS(@"file:/var/mobile/Library/Preferences/EvilScheme/log_v0.plist");
 
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:path]
                                          options:0
@@ -60,7 +60,7 @@ static NSDictionary *logDict() {
 static void setLogDict(NSDictionary *dict) {
     NSError *err;
 
-    NSString *dir = @"/var/mobile/Library/Preferences/EvilScheme/";
+    NSString *dir = ROOT_PATH_NS(@"/var/mobile/Library/Preferences/EvilScheme/");
     // Ensure dir exists
     if (![[NSFileManager defaultManager] fileExistsAtPath:dir
                                               isDirectory:nil]) {
@@ -74,7 +74,7 @@ static void setLogDict(NSDictionary *dict) {
                                          requiringSecureCoding:NO
                                                          error:&err];
 
-    NSString *path = @"file:/var/mobile/Library/Preferences/EvilScheme/log_v0.plist";
+    NSString *path = ROOT_PATH_NS(@"file:/var/mobile/Library/Preferences/EvilScheme/log_v0.plist");
     [data writeToURL:[NSURL URLWithString:path]
              options:0
                error:&err];
